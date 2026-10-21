@@ -59,8 +59,17 @@ select {
   overflow: hidden;
   color: var(--cloud-white);
   background:
-    radial-gradient(circle at 85% 20%, rgba(119, 183, 125, 0.32), transparent 34%),
-    linear-gradient(135deg, #123e2f 0%, var(--aloe-deep) 42%, var(--aloe-green) 100%);
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(119, 183, 125, 0.32),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #123e2f 0%,
+      var(--aloe-deep) 42%,
+      var(--aloe-green) 100%
+    );
 }
 
 .hero::after {
@@ -128,7 +137,10 @@ select {
   border-radius: 14px;
   font-weight: 800;
   text-decoration: none;
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
 }
 
 .primaryButton {
@@ -424,7 +436,11 @@ button:focus-visible {
   place-items: center;
   padding: 42px 20px;
   background:
-    radial-gradient(circle at 50% 0%, rgba(119, 183, 125, 0.2), transparent 34%),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(119, 183, 125, 0.2),
+      transparent 34%
+    ),
     linear-gradient(180deg, #f1f7f3 0%, var(--cloud-white) 70%);
 }
 
@@ -494,7 +510,9 @@ button:focus-visible {
   color: var(--aloe-deep);
   font-weight: 800;
   text-decoration: none;
-  transition: transform 160ms ease, border-color 160ms ease;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease;
 }
 
 .statusSecondaryButton:hover {
@@ -555,6 +573,1717 @@ button:focus-visible {
 
   .statusActions .primaryButton,
   .statusSecondaryButton {
+    width: 100%;
+  }
+}
+
+/* AloeRoam application design system */
+:root {
+  --app-background: #fcfdfc;
+  --app-background-secondary: #f3f7f4;
+  --app-card: #ffffff;
+  --app-text-primary: #173f32;
+  --app-text-secondary: #5f7067;
+  --app-text-muted: #819087;
+  --app-border: #dce7e0;
+  --app-error: #be4b49;
+  --app-overlay: rgba(16, 56, 42, 0.56);
+  --app-radius-sm: 10px;
+  --app-radius-md: 14px;
+  --app-radius-lg: 18px;
+  --app-radius-xl: 24px;
+  --app-shadow-card: 0 14px 34px rgba(23, 77, 58, 0.1);
+  --app-shadow-button: 0 10px 24px rgba(47, 125, 91, 0.2);
+}
+
+.appSurface {
+  min-height: 100vh;
+  background: var(--app-background);
+  color: var(--app-text-primary);
+}
+
+.appEyebrow {
+  margin: 0;
+  color: var(--aloe-green);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.appTitle {
+  margin: 3px 0 0;
+  color: var(--aloe-deep);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.appMuted {
+  color: var(--app-text-secondary);
+}
+
+.appCard {
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-xl);
+  background: var(--app-card);
+  box-shadow: var(--app-shadow-card);
+}
+
+.appPrimaryButton {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: var(--app-radius-lg);
+  background: var(--aloe-green);
+  color: var(--cloud-white);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: var(--app-shadow-button);
+}
+
+.appPrimaryButton:hover {
+  background: var(--aloe-deep);
+}
+
+.appPrimaryButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.appField {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 16px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  outline: none;
+  background: var(--app-background-secondary);
+  color: var(--app-text-primary);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.appField:focus {
+  border-color: var(--aloe-green);
+  box-shadow: 0 0 0 4px rgba(47, 125, 91, 0.12);
+}
+
+/* Admin portal */
+.adminLoginPage {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+  background: var(--app-background);
+}
+
+.adminLoginBrand {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: clamp(38px, 7vw, 88px);
+  background: var(--aloe-deep);
+  color: var(--cloud-white);
+}
+
+.adminLoginBrand::before {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  right: -160px;
+  top: -160px;
+  border-radius: 50%;
+  background: rgba(119, 183, 125, 0.16);
+  content: "";
+}
+
+.adminLoginBrand::after {
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  left: -140px;
+  bottom: -155px;
+  border-radius: 50%;
+  background: rgba(229, 169, 61, 0.11);
+  content: "";
+}
+
+.adminLoginBrandContent {
+  position: relative;
+  z-index: 1;
+  max-width: 610px;
+}
+
+.adminBrandMark {
+  display: grid;
+  width: 74px;
+  height: 74px;
+  place-items: center;
+  margin-bottom: 26px;
+  border-radius: 24px;
+  background: var(--aloe-green);
+  color: var(--cloud-white);
+  font-size: 2rem;
+  font-weight: 900;
+  box-shadow: var(--app-shadow-button);
+}
+
+.adminBrandEyebrow {
+  margin: 0;
+  color: var(--karoo-gold);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.adminBrandTitle {
+  margin: 8px 0 0;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.adminBrandText {
+  max-width: 540px;
+  margin: 22px 0 0;
+  color: rgba(252, 253, 252, 0.78);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.adminLoginPanel {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 44px;
+}
+
+.adminLoginCard {
+  width: min(470px, 100%);
+  padding: clamp(28px, 5vw, 42px);
+}
+
+.adminLoginTitle {
+  margin: 10px 0 0;
+  color: var(--app-text-primary);
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.adminLoginLead {
+  margin: 12px 0 28px;
+  color: var(--app-text-secondary);
+  line-height: 1.65;
+}
+
+.adminFormGroup + .adminFormGroup {
+  margin-top: 18px;
+}
+
+.adminFormLabel {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--app-text-primary);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.adminLoginSubmit {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.adminFormError {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(190, 75, 73, 0.25);
+  border-radius: var(--app-radius-md);
+  background: rgba(190, 75, 73, 0.07);
+  color: var(--app-error);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.adminLoginFootnote {
+  margin: 24px 0 0;
+  color: var(--app-text-muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.adminShell {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 278px minmax(0, 1fr);
+  background: var(--app-background);
+}
+
+.adminSidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding: 26px 20px;
+  background: var(--aloe-deep);
+  color: var(--cloud-white);
+}
+
+.adminSidebarBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px 26px;
+}
+
+.adminSidebarMark {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--aloe-green);
+  color: var(--cloud-white);
+  font-weight: 900;
+}
+
+.adminSidebarName {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.adminSidebarLabel {
+  display: block;
+  margin-top: 2px;
+  color: var(--karoo-gold);
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+}
+
+.adminNavLabel {
+  margin: 16px 10px 7px;
+  color: rgba(252, 253, 252, 0.48);
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.adminNavLink {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border-radius: var(--app-radius-md);
+  color: rgba(252, 253, 252, 0.78);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.adminNavLink:hover,
+.adminNavLinkActive {
+  background: rgba(252, 253, 252, 0.1);
+  color: var(--cloud-white);
+}
+
+.adminSidebarFooter {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(252, 253, 252, 0.12);
+}
+
+.adminSignOutButton {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid rgba(252, 253, 252, 0.16);
+  border-radius: var(--app-radius-md);
+  background: rgba(252, 253, 252, 0.06);
+  color: var(--cloud-white);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.adminWorkspace {
+  min-width: 0;
+}
+
+.adminTopbar {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 4vw, 52px);
+  border-bottom: 1px solid var(--app-border);
+  background: rgba(252, 253, 252, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.adminTopbarUser {
+  color: var(--app-text-secondary);
+  font-size: 0.86rem;
+}
+
+.adminPage {
+  padding: clamp(26px, 4vw, 52px);
+}
+
+.adminAccessDenied {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+  background: var(--app-background);
+}
+
+.adminAccessDeniedCard {
+  width: min(520px, 100%);
+  padding: 38px;
+  text-align: center;
+}
+
+.adminAccessDeniedIcon {
+  display: grid;
+  width: 70px;
+  height: 70px;
+  place-items: center;
+  margin: 0 auto 18px;
+  border-radius: 22px;
+  background: rgba(229, 169, 61, 0.14);
+  color: var(--karoo-gold);
+  font-size: 1.8rem;
+}
+
+@media (max-width: 900px) {
+  .adminLoginPage {
+    grid-template-columns: 1fr;
+  }
+
+  .adminLoginBrand {
+    min-height: auto;
+    padding: 52px 28px;
+  }
+
+  .adminLoginPanel {
+    min-height: auto;
+    padding: 34px 20px 60px;
+  }
+
+  .adminShell {
+    grid-template-columns: 86px minmax(0, 1fr);
+  }
+
+  .adminSidebar {
+    padding: 22px 12px;
+  }
+
+  .adminSidebarBrand {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .adminSidebarBrandCopy,
+  .adminNavLabel,
+  .adminNavLink span,
+  .adminSignOutButton span {
+    display: none;
+  }
+
+  .adminNavLink,
+  .adminSignOutButton {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .adminLoginBrand {
+    padding: 42px 22px;
+  }
+
+  .adminBrandTitle {
+    font-size: 3.3rem;
+  }
+
+  .adminShell {
+    display: block;
+  }
+
+  .adminSidebar {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+  }
+
+  .adminSidebarBrand {
+    margin-right: auto;
+    padding: 0;
+  }
+
+  .adminSidebarNav {
+    display: none;
+  }
+
+  .adminSidebarFooter {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .adminSignOutButton {
+    width: 44px;
+    min-height: 44px;
+  }
+
+  .adminTopbar {
+    min-height: 66px;
+    padding-inline: 20px;
+  }
+
+  .adminPage {
+    padding: 24px 20px 44px;
+  }
+}
+/* AloeRoam live admin dashboard */
+.adminDashboard {
+  display: grid;
+  gap: 28px;
+}
+
+.adminDashboardHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.adminDashboardLead {
+  max-width: 720px;
+  margin: 12px 0 0;
+  color: var(--app-text-secondary);
+  line-height: 1.65;
+}
+
+.adminDashboardPrimary {
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+
+.adminDashboardError {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px solid rgba(190, 75, 73, 0.24);
+  border-radius: var(--app-radius-lg);
+  background: rgba(190, 75, 73, 0.07);
+  color: var(--app-error);
+}
+
+.adminMetricGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.adminMetricCard {
+  position: relative;
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-xl);
+  background: var(--app-card);
+  color: var(--app-text-primary);
+  box-shadow: var(--app-shadow-card);
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.adminMetricCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(47, 125, 91, 0.28);
+  box-shadow: 0 18px 38px rgba(23, 77, 58, 0.14);
+}
+
+.adminMetricCard::after {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  right: -44px;
+  bottom: -48px;
+  border-radius: 50%;
+  content: "";
+  opacity: 0.12;
+}
+
+.adminMetricCard--gold::after,
+.adminMetricCard--goldSoft::after {
+  background: var(--karoo-gold);
+}
+
+.adminMetricCard--green::after {
+  background: var(--aloe-green);
+}
+
+.adminMetricCard--red::after {
+  background: var(--app-error);
+}
+
+.adminMetricTopline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.adminMetricMark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--app-background-secondary);
+  color: var(--aloe-deep);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.adminMetricArrow {
+  color: var(--app-text-muted);
+  font-size: 1.15rem;
+}
+
+.adminMetricValue {
+  margin-top: 24px;
+  color: var(--aloe-deep);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.adminMetricLabel {
+  margin-top: 8px;
+  font-weight: 900;
+}
+
+.adminMetricDescription {
+  margin-top: 8px;
+  color: var(--app-text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.adminAttentionCard {
+  padding: clamp(22px, 3vw, 30px);
+}
+
+.adminSectionHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.adminSectionHeading h2 {
+  margin: 5px 0 0;
+  color: var(--aloe-deep);
+  font-size: 1.45rem;
+  letter-spacing: -0.025em;
+}
+
+.adminSectionHeading p:not(.appEyebrow) {
+  max-width: 680px;
+  margin: 7px 0 0;
+  color: var(--app-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.adminTextLink {
+  flex: 0 0 auto;
+  color: var(--aloe-green);
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.adminAttentionList {
+  margin-top: 22px;
+  border-top: 1px solid var(--app-border);
+}
+
+.adminAttentionRow {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) minmax(180px, auto);
+  gap: 18px;
+  align-items: center;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--app-border);
+  color: var(--app-text-primary);
+  text-decoration: none;
+}
+
+.adminAttentionRow:hover .adminAttentionMain strong {
+  color: var(--aloe-green);
+}
+
+.adminListingType {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.adminListingType--event {
+  background: rgba(119, 183, 125, 0.16);
+  color: var(--aloe-deep);
+}
+
+.adminListingType--promotion {
+  background: rgba(229, 169, 61, 0.17);
+  color: #805719;
+}
+
+.adminListingType--service {
+  background: rgba(47, 125, 91, 0.13);
+  color: var(--aloe-green);
+}
+
+.adminAttentionMain {
+  min-width: 0;
+}
+
+.adminAttentionMain strong,
+.adminAttentionMain span {
+  display: block;
+}
+
+.adminAttentionMain strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.adminAttentionMain span {
+  margin-top: 4px;
+  color: var(--app-text-secondary);
+  font-size: 0.82rem;
+}
+
+.adminAttentionMeta {
+  text-align: right;
+}
+
+.adminAttentionMeta span,
+.adminAttentionMeta strong {
+  display: block;
+}
+
+.adminAttentionMeta span {
+  color: var(--app-text-muted);
+  font-size: 0.75rem;
+}
+
+.adminAttentionMeta strong {
+  margin-top: 5px;
+  color: var(--aloe-green);
+  font-size: 0.78rem;
+}
+
+.adminDashboardEmpty {
+  display: grid;
+  justify-items: center;
+  padding: 48px 20px 24px;
+  text-align: center;
+}
+
+.adminDashboardEmptyIcon {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  margin-bottom: 14px;
+  border-radius: 20px;
+  background: rgba(119, 183, 125, 0.15);
+  color: var(--aloe-green);
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.adminDashboardEmpty strong {
+  color: var(--aloe-deep);
+}
+
+.adminDashboardEmpty span {
+  margin-top: 6px;
+  color: var(--app-text-secondary);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 1180px) {
+  .adminMetricGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .adminDashboardHeading,
+  .adminSectionHeading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .adminDashboardPrimary {
+    width: 100%;
+  }
+
+  .adminMetricGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .adminMetricCard {
+    min-height: 190px;
+  }
+
+  .adminAttentionRow {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .adminAttentionMeta {
+    text-align: left;
+  }
+}
+/* AloeRoam Pending Listings queue */
+.adminQueuePage {
+  display: grid;
+  gap: 24px;
+}
+
+.adminQueueHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.adminQueueLead {
+  max-width: 720px;
+  margin: 12px 0 0;
+  color: var(--app-text-secondary);
+  line-height: 1.65;
+}
+
+.adminQueueCount {
+  display: grid;
+  min-width: 104px;
+  justify-items: center;
+  padding: 15px 18px;
+  border: 1px solid rgba(229, 169, 61, 0.25);
+  border-radius: var(--app-radius-lg);
+  background: rgba(229, 169, 61, 0.1);
+}
+
+.adminQueueCount strong {
+  color: var(--aloe-deep);
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.adminQueueCount span {
+  margin-top: 5px;
+  color: #805719;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.adminQueueWorkspace {
+  display: grid;
+  gap: 16px;
+}
+
+.adminQueueToolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+}
+
+.adminQueueSearch {
+  width: min(520px, 100%);
+}
+
+.adminQueueFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adminQueueFilter {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  background: var(--app-card);
+  color: var(--app-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.adminQueueFilter:hover {
+  border-color: rgba(47, 125, 91, 0.35);
+  color: var(--aloe-green);
+}
+
+.adminQueueFilter--active {
+  border-color: var(--aloe-green);
+  background: var(--aloe-green);
+  color: var(--cloud-white);
+}
+
+.adminQueueResultBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--app-text-muted);
+  font-size: 0.78rem;
+}
+
+.adminQueueResultBar strong {
+  color: var(--app-text-primary);
+}
+
+.adminQueueTableCard {
+  overflow: hidden;
+}
+
+.adminQueueTable {
+  min-width: 980px;
+}
+
+.adminQueueTableCard {
+  overflow-x: auto;
+}
+
+.adminQueueTableHead,
+.adminQueueTableRow {
+  display: grid;
+  grid-template-columns:
+    112px minmax(250px, 1.55fr) minmax(170px, 0.9fr)
+    minmax(130px, 0.7fr) 150px 90px;
+  gap: 16px;
+  align-items: center;
+}
+
+.adminQueueTableHead {
+  min-height: 50px;
+  padding: 0 22px;
+  border-bottom: 1px solid var(--app-border);
+  background: var(--app-background-secondary);
+  color: var(--app-text-muted);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.adminQueueTableRow {
+  min-height: 90px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.adminQueueTableRow:last-child {
+  border-bottom: 0;
+}
+
+.adminQueueTableRow:hover {
+  background: rgba(47, 125, 91, 0.035);
+}
+
+.adminQueueListingCell,
+.adminQueueProviderCell {
+  min-width: 0;
+}
+
+.adminQueueListingCell strong,
+.adminQueueListingCell span,
+.adminQueueProviderCell strong,
+.adminQueueProviderCell span {
+  display: block;
+}
+
+.adminQueueListingCell strong,
+.adminQueueProviderCell strong {
+  overflow: hidden;
+  color: var(--app-text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adminQueueListingCell span {
+  display: -webkit-box;
+  margin-top: 5px;
+  overflow: hidden;
+  color: var(--app-text-secondary);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.adminQueueProviderCell span,
+.adminQueueMutedCell {
+  margin-top: 4px;
+  color: var(--app-text-muted);
+  font-size: 0.75rem;
+}
+
+.adminQueueActionCell {
+  text-align: right;
+}
+
+.adminQueueReviewLink {
+  color: var(--aloe-green);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.adminQueueReviewLink:hover {
+  color: var(--aloe-deep);
+}
+
+.adminQueueEmpty {
+  display: grid;
+  justify-items: center;
+  padding: 58px 24px;
+  text-align: center;
+}
+
+.adminQueueEmptyIcon {
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  margin-bottom: 16px;
+  border-radius: 22px;
+  background: rgba(119, 183, 125, 0.15);
+  color: var(--aloe-green);
+  font-size: 1.65rem;
+  font-weight: 900;
+}
+
+.adminQueueEmpty h2 {
+  margin: 0;
+  color: var(--aloe-deep);
+  font-size: 1.3rem;
+}
+
+.adminQueueEmpty p {
+  max-width: 500px;
+  margin: 8px 0 0;
+  color: var(--app-text-secondary);
+  line-height: 1.55;
+}
+
+.adminQueueClearButton {
+  min-height: 42px;
+  margin-top: 20px;
+  padding: 0 16px;
+  border: 1px solid var(--aloe-green);
+  border-radius: var(--app-radius-md);
+  background: transparent;
+  color: var(--aloe-green);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .adminQueueToolbar,
+  .adminQueueHeading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .adminQueueCount {
+    width: fit-content;
+  }
+
+  .adminQueueSearch {
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .adminQueueResultBar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+/* AloeRoam listing review */
+.adminReviewPage {
+  display: grid;
+  gap: 22px;
+}
+
+.adminReviewBreadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--app-text-muted);
+  font-size: 0.78rem;
+}
+
+.adminReviewBreadcrumbs a {
+  color: var(--aloe-green);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.adminReviewHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.adminReviewHeader h1 {
+  margin: 10px 0 0;
+  color: var(--aloe-deep);
+  font-size: clamp(2rem, 4vw, 3.05rem);
+  letter-spacing: -0.045em;
+}
+
+.adminReviewHeader p {
+  margin: 9px 0 0;
+  color: var(--app-text-secondary);
+}
+
+.adminReviewBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adminReviewStatus {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.adminReviewStatus--pending,
+.adminReviewStatus--changes_required {
+  background: rgba(229, 169, 61, 0.16);
+  color: #805719;
+}
+
+.adminReviewStatus--published {
+  background: rgba(47, 125, 91, 0.14);
+  color: var(--aloe-green);
+}
+
+.adminReviewStatus--rejected {
+  background: rgba(190, 75, 73, 0.11);
+  color: var(--app-error);
+}
+
+.adminReviewEditLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid var(--aloe-green);
+  border-radius: var(--app-radius-md);
+  color: var(--aloe-green);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.adminReviewLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 22px;
+  align-items: start;
+}
+
+.adminReviewContent {
+  display: grid;
+  gap: 18px;
+}
+
+.adminReviewSection {
+  padding: clamp(22px, 3vw, 30px);
+}
+
+.adminReviewSection--gold {
+  border-color: rgba(229, 169, 61, 0.28);
+  background: linear-gradient(
+    180deg,
+    rgba(229, 169, 61, 0.055),
+    var(--app-card)
+  );
+}
+
+.adminReviewSectionHeading h2 {
+  margin: 5px 0 0;
+  color: var(--aloe-deep);
+  font-size: 1.4rem;
+  letter-spacing: -0.025em;
+}
+
+.adminReviewDescription {
+  margin-top: 20px;
+  color: var(--app-text-secondary);
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.adminReviewDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.adminReviewDetail {
+  min-width: 0;
+  padding: 14px 15px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  background: var(--app-background-secondary);
+}
+
+.adminReviewDetail--wide {
+  grid-column: 1 / -1;
+}
+
+.adminReviewDetail span,
+.adminReviewDetail strong {
+  display: block;
+}
+
+.adminReviewDetail span {
+  color: var(--app-text-muted);
+  font-size: 0.69rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.adminReviewDetail strong {
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+  color: var(--app-text-primary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.adminReviewAside {
+  position: sticky;
+  top: 98px;
+}
+
+.adminModerationPanel {
+  padding: 24px;
+}
+
+.adminModerationPanel h2 {
+  margin: 6px 0 0;
+  color: var(--aloe-deep);
+  font-size: 1.45rem;
+}
+
+.adminModerationLead {
+  margin: 10px 0 0;
+  color: var(--app-text-secondary);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.adminModerationCurrent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 12px 14px;
+  border-radius: var(--app-radius-md);
+  background: var(--app-background-secondary);
+}
+
+.adminModerationCurrent span {
+  color: var(--app-text-muted);
+  font-size: 0.74rem;
+}
+
+.adminModerationCurrent strong {
+  color: var(--aloe-deep);
+  font-size: 0.78rem;
+  text-transform: capitalize;
+}
+
+.adminModerationActions {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.adminModerationButton,
+.adminModerationCancel,
+.adminModerationSubmit {
+  min-height: 45px;
+  border-radius: var(--app-radius-md);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.adminModerationButton {
+  border: 1px solid var(--app-border);
+  background: var(--app-card);
+}
+
+.adminModerationButton--changes {
+  border-color: rgba(229, 169, 61, 0.55);
+  color: #805719;
+}
+
+.adminModerationButton--reject {
+  border-color: rgba(190, 75, 73, 0.44);
+  color: var(--app-error);
+}
+
+.adminModerationButton--approve {
+  border-color: var(--aloe-green);
+  background: var(--aloe-green);
+  color: var(--cloud-white);
+}
+
+.adminModerationConfirm {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--app-border);
+}
+
+.adminModerationConfirm > strong {
+  color: var(--aloe-deep);
+}
+
+.adminModerationConfirm > p {
+  margin: 7px 0 16px;
+  color: var(--app-text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.adminModerationTextarea {
+  width: 100%;
+  resize: vertical;
+  padding: 12px 14px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  outline: 0;
+  background: var(--app-background-secondary);
+  color: var(--app-text-primary);
+  font: inherit;
+}
+
+.adminModerationTextarea:focus {
+  border-color: var(--aloe-green);
+  box-shadow: 0 0 0 4px rgba(47, 125, 91, 0.12);
+}
+
+.adminModerationConfirm small {
+  display: block;
+  margin-top: 5px;
+  color: var(--app-text-muted);
+  text-align: right;
+}
+
+.adminModerationConfirmActions {
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.adminModerationCancel {
+  border: 1px solid var(--app-border);
+  background: transparent;
+  color: var(--app-text-secondary);
+}
+
+.adminModerationSubmit {
+  border: 0;
+  background: var(--aloe-deep);
+  color: var(--cloud-white);
+}
+
+.adminModerationSubmit--approve {
+  background: var(--aloe-green);
+}
+
+.adminModerationSubmit--request_changes {
+  background: var(--karoo-gold);
+  color: var(--aloe-deep);
+}
+
+.adminModerationSubmit--reject {
+  background: var(--app-error);
+}
+
+.adminModerationButton:disabled,
+.adminModerationCancel:disabled,
+.adminModerationSubmit:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.adminReviewTimeline {
+  display: grid;
+  gap: 0;
+  margin-top: 20px;
+}
+
+.adminReviewTimelineItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 20px;
+}
+
+.adminReviewTimelineItem:not(:last-child)::before {
+  position: absolute;
+  width: 2px;
+  left: 5px;
+  top: 13px;
+  bottom: 0;
+  background: var(--app-border);
+  content: "";
+}
+
+.adminReviewTimelineDot {
+  width: 12px;
+  height: 12px;
+  margin-top: 4px;
+  border: 3px solid rgba(47, 125, 91, 0.2);
+  border-radius: 50%;
+  background: var(--aloe-green);
+  z-index: 1;
+}
+
+.adminReviewTimelineItem strong,
+.adminReviewTimelineItem span {
+  display: block;
+}
+
+.adminReviewTimelineItem strong {
+  color: var(--app-text-primary);
+  text-transform: capitalize;
+}
+
+.adminReviewTimelineItem span {
+  margin-top: 3px;
+  color: var(--app-text-muted);
+  font-size: 0.74rem;
+}
+
+.adminReviewTimelineItem p {
+  margin: 8px 0 0;
+  color: var(--app-text-secondary);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1050px) {
+  .adminReviewLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .adminReviewAside {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .adminReviewHeader {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .adminReviewEditLink {
+    justify-content: center;
+  }
+
+  .adminReviewDetailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .adminReviewDetail--wide {
+    grid-column: auto;
+  }
+}
+/* AloeRoam queue status variants */
+.adminQueueCount--green {
+  border-color: rgba(47, 125, 91, 0.25);
+  background: rgba(47, 125, 91, 0.1);
+}
+
+.adminQueueCount--green span {
+  color: var(--aloe-green);
+}
+
+.adminQueueCount--gold {
+  border-color: rgba(229, 169, 61, 0.25);
+  background: rgba(229, 169, 61, 0.1);
+}
+
+.adminQueueCount--gold span {
+  color: #805719;
+}
+
+.adminQueueCount--red {
+  border-color: rgba(190, 75, 73, 0.24);
+  background: rgba(190, 75, 73, 0.08);
+}
+
+.adminQueueCount--red span {
+  color: var(--app-error);
+}
+/* AloeRoam Admin Listing Editor */
+.adminEditorPage {
+  display: grid;
+  gap: 22px;
+}
+
+.adminEditorHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.adminEditorHeading h1 {
+  margin: 10px 0 0;
+  color: var(--aloe-deep);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.045em;
+}
+
+.adminEditorHeading p {
+  max-width: 680px;
+  margin: 9px 0 0;
+  color: var(--app-text-secondary);
+  line-height: 1.6;
+}
+
+.adminEditorProvider {
+  display: grid;
+  min-width: 220px;
+  padding: 13px 15px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  background: var(--app-card);
+}
+
+.adminEditorProvider span {
+  color: var(--app-text-muted);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.adminEditorProvider strong {
+  margin-top: 4px;
+  color: var(--app-text-primary);
+}
+
+.adminEditorForm {
+  display: grid;
+  gap: 18px;
+}
+
+.adminEditorSection {
+  padding: clamp(22px, 3vw, 30px);
+}
+
+.adminEditorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.adminEditorGrid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.adminEditorField {
+  min-width: 0;
+}
+
+.adminEditorField--wide {
+  grid-column: 1 / -1;
+}
+
+.adminEditorField > span,
+.adminEditorReadOnly > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--app-text-primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.adminEditorField small,
+.adminEditorReadOnly small {
+  display: block;
+  margin-top: 6px;
+  color: var(--app-text-muted);
+  font-size: 0.72rem;
+  text-align: right;
+}
+
+.adminEditorTextarea {
+  width: 100%;
+  resize: vertical;
+  padding: 14px 16px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  outline: 0;
+  background: var(--app-background-secondary);
+  color: var(--app-text-primary);
+  font: inherit;
+  line-height: 1.6;
+}
+
+.adminEditorTextarea:focus {
+  border-color: var(--aloe-green);
+  box-shadow: 0 0 0 4px rgba(47, 125, 91, 0.12);
+}
+
+.adminEditorReadOnly {
+  padding: 14px 16px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  background: var(--app-background-secondary);
+}
+
+.adminEditorReadOnly strong {
+  color: var(--aloe-deep);
+}
+
+.adminEditorReadOnly small {
+  text-align: left;
+}
+
+.adminEditorCheckbox {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  background: var(--app-background-secondary);
+  color: var(--app-text-primary);
+  font-weight: 800;
+}
+
+.adminEditorCheckbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--aloe-green);
+}
+
+.adminEditorActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 18px 0 8px;
+}
+
+.adminEditorCancel {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  color: var(--app-text-secondary);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+@media (max-width: 820px) {
+  .adminEditorHeading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .adminEditorProvider {
+    width: fit-content;
+  }
+
+  .adminEditorGrid,
+  .adminEditorGrid--three {
+    grid-template-columns: 1fr;
+  }
+
+  .adminEditorField--wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .adminEditorActions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .adminEditorActions > * {
     width: 100%;
   }
 }
